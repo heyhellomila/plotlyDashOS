@@ -15,11 +15,11 @@ app = dash.Dash()
 app.title = 'Dash App: Operating Systems - Interns'
 
 ## css elements with bootstrap
-app.css.append_css({'external_url': 'https://bootswatch.com/4/lux/bootstrap.css'})
+app.css.append_css({'external_url': 'https://codepen.io/amyoshino/pen/jzXypZ.css'})
 
 app.layout = html.Div(
     html.Div([
-        dcc.Graph(
+        html.Div([dcc.Graph(
             id='barchart',
             figure={
                 'data': [
@@ -31,20 +31,19 @@ app.layout = html.Div(
                         title='Operating Systems',
                         titlefont=dict(
                         family='Old Standard TT',
-                        size=20,
-                        color='#7f7f7f'
+                        size=20
                     )),
                     'yaxis' : dict(
                         title='# of Interns',
                         titlefont=dict(
                         family='Old Standard TT',
-                        size=20,
+                        size=20
                     ))
                 }
             }
-        ),
+        )], className='six columns'),
 
-        dcc.Graph(
+        html.Div([dcc.Graph(
             id='example-graph-2',
             figure={
                 'data': [
@@ -66,9 +65,11 @@ app.layout = html.Div(
                     ))
                 }
             }
-        )
+        )], className= 'six columns')
 
-    ])
+    ], className="row"),
+
+    dcc.Graph()
 )
 
 
