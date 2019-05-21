@@ -19,11 +19,61 @@ app.title = 'Dash App: Operating Systems - Interns'
 app.css.append_css({'external_url': 'https://codepen.io/amyoshino/pen/jzXypZ.css'})
 
 app.layout = html.Div(
-html.Div([
-        html.H3(children='Plot.ly: Summer 2019 Preferred Operating Systems'),
+    html.Div([
+        html.Div([dcc.Graph(
+            id='barchart',
+            figure={
+                'data': [
+                    {'x': ['MacOSX', 'Windows', 'Linux', 'Other'],
+                     'y': [9, 4, 2, 0], 'type': 'bar'}],
+                'layout': {
+                    'title': 'Plot.ly: Summer 2019 Preferred Operating Systems',
+                    'xaxis': dict(
+                        title='Operating Systems',
+                        titlefont=dict(
+                        family='Old Standard TT',
+                        size=20
+                    )),
+                    'yaxis' : dict(
+                        title='# of Interns',
+                        titlefont=dict(
+                        family='Old Standard TT',
+                        size=20
+                    ))
+                }
+            }
+        )], className='six columns'),
 
-    ##Donut Chart
-    dcc.Graph(
+        html.Div([dcc.Graph(
+            id='example-graph-2',
+            figure={
+                'data': [
+                    {'x': ['MacOSX', 'Windows', 'Linux', 'Other'],
+                     'y': [9, 4, 2, 0], 'type': 'line'}],
+                'layout': {
+                    'title': 'Plot.ly: Summer 2019 Preferred Operating Systems',
+                    'xaxis': dict(
+                        title='Operating Systems',
+                        titlefont=dict(
+                        family='Old Standard TT',
+                        size=20
+                        )),
+                    'yaxis': dict(
+                    title='# of Interns',
+                    titlefont=dict(
+                    family='Old Standard TT',
+                        size=20
+                    ))
+                }
+            }
+        )], className= 'six columns')
+
+    ], className="row")
+)
+
+
+"""    ##Donut Chart
+    html.Div(dcc.Graph(
         id='piechart',
         figure={
             'data': [{'labels': ['MacOSX', 'Windows', 'Linux', 'Other'],
@@ -53,8 +103,8 @@ html.Div([
             }
         }
     )
-])
-)
+    )"""
+
 ## return event statement
 
 if __name__ == '__main__':
