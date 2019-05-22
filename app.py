@@ -30,15 +30,15 @@ app.layout = html.Div(
                       'sort': False,
                       'showLegend': False,
                       'text-info': 'percent-label',
-                      'colors': ['#ffa15a',
-                                 '#19d3f3',
-                                 '#fecb52',
-                                 '#ff6692'],
+                      'sort': False,
+                      'marker': {
+                          'colors': ['#e6f2ff', '#99ccff', '#ccccff',
+                                     '#cc99ff']},
                       'type': 'pie',
                       'hole': 0.8,
                       }],
             'layout': {
-                'title': 'Plot.ly: Summer 2019 Preferred Operating Systems',
+                'title': 'Plot.ly: Summer 2019 Interns Preferred Operating Systems',
                 'hoverinfo': 'label+percent+name',
                 'xaxis': dict(
                     title='Operating Systems',
@@ -51,8 +51,9 @@ app.layout = html.Div(
                         family='Old Standard TT',
                         size=20)),
                 'annotations': [{
-                    'text': 'OS'
-                }]
+                    'text': 'PLOT.LY',
+                    'font': {'size': 20
+                             }}]
             }
         }
     )
