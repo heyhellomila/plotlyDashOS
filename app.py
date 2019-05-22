@@ -20,42 +20,43 @@ app.css.append_css({'external_url': 'https://codepen.io/amyoshino/pen/jzXypZ.css
 
 app.layout = html.Div(
 
-### Tabs
+    ### Tabs
 
-dcc.Graph(
-    id='piechart',
-    figure={
-        'data': [{'labels': ['MacOSX', 'Windows', 'Linux', 'Other'],
-                  'values': [60, 26.7, 13.3, 0],
-                  'sort': False,
-                  'showLegend': False,
-                  'text-info': 'percent-label',
-                  'colors': ['#ffa15a',
-                             '#19d3f3',
-                             '#fecb52',
-                             '#ff6692'],
-                  'type': 'pie',
-                  'hole': 0.8,
-                  }],
-        'layout': {
-            'title': 'Plot.ly: Summer 2019 Preferred Operating Systems',
-            'hoverinfo': 'label+percent+name',
-            'xaxis': dict(
-                title='Operating Systems',
-                titlefont=dict(
-                    family='Old Standard TT',
-                    size=20)),
-            'yaxis': dict(
-                title='# of Interns',
-                titlefont=dict(
-                    family='Old Standard TT',
-                    size=20)),
-            'annotations': [{
-                'text': 'OS'
+    dcc.Graph(
+        id='piechart',
+        figure={
+            'data': [{'labels': ['MacOSX', 'Windows', 'Linux', 'Other'],
+                      'values': [60, 26.7, 13.3, 0],
+                      'sort': False,
+                      'showLegend': False,
+                      'text-info': 'percent-label',
+                      'colors': ['#ffa15a',
+                                 '#19d3f3',
+                                 '#fecb52',
+                                 '#ff6692'],
+                      'type': 'pie',
+                      'hole': 0.8,
+                      }],
+            'layout': {
+                'title': 'Plot.ly: Summer 2019 Preferred Operating Systems',
+                'hoverinfo': 'label+percent+name',
+                'xaxis': dict(
+                    title='Operating Systems',
+                    titlefont=dict(
+                        family='Old Standard TT',
+                        size=20)),
+                'yaxis': dict(
+                    title='# of Interns',
+                    titlefont=dict(
+                        family='Old Standard TT',
+                        size=20)),
+                'annotations': [{
+                    'text': 'OS'
                 }]
+            }
         }
-    }
-),
+    )
+)
 
 ##Barchart
 """dcc.Graph(
@@ -81,10 +82,11 @@ dcc.Graph(
         }
     }
     )
-)"""
+)
 
 ##LineChart
-"""dcc.Graph(
+
+dcc.Graph(
     id='line',
   figure={
         'data': [
@@ -109,7 +111,8 @@ dcc.Graph(
 
 
 )
-)"""
+)
+"""
 
 ## return event statement
 
